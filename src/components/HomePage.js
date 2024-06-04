@@ -19,6 +19,9 @@ function HomePage() {
           <Link to="/sudoku" className="home-button m-3">Sudoku Solver</Link>
         </div>
         <div className="home-buttons">
+          <Link to="/visualizer" className="home-button m-3">N Queen Visualizer</Link>
+        </div>
+        <div className="home-buttons">
           <Link to="/tree" className="home-button m-3">Tree Visualizer</Link>
         </div>
 
