@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  #options {
+    margin-top: 10px;
+  }
+  
+  #options button {
+    background-color: white;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    padding: 10px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  #options button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  #blurb {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #binary-tree, #array-visual {
+    margin-top: 20px;
+  }
+  /* Style for array visualization */
+#array-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Style for array element */
+  .array-element {
+    background-color: #f0f0f0; /* Light gray background */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px; /* Spacing between elements */
+  }
+  
+  /* Style for array index */
+  .array-index {
+    font-size: 14px; /* Font size */
+    color: #666; /* Gray color */
+    margin-top: 5px; /* Spacing from element */
+  }
+  
