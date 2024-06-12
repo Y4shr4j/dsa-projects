@@ -1,0 +1,37 @@
+.sorting-visualizer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .array-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .array-bar {
+    margin: 0 1px;
+    width: 3px;
+    background-color: #333;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

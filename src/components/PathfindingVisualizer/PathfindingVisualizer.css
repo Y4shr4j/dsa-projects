@@ -1,3 +1,29 @@
 .grid {
-  margin: 100px 0 0;
+  margin: 50px 0 0;
+}
+/* styles.css */
+
+/* Existing styles */
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
 }

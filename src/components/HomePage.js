@@ -24,8 +24,12 @@ function HomePage() {
         <div className="home-buttons">
           <Link to="/tree" className="home-button m-3">Tree Visualizer</Link>
         </div>
-
-        
+        <div className="home-buttons">
+          <Link to="/tic-tac-toe" className="home-button m-3">Tic Tac Toe</Link>
+        </div>
+        <div className="home-buttons">
+          <Link to="/sort" className="home-button m-3">Sorting Visualizer</Link>
+        </div>
       </header>
     </div>
   );

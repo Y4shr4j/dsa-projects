@@ -18,11 +18,24 @@ export default class PathfindingVisualizer extends Component {
       mouseIsPressed: false,
     };
     // Binding methods
+
+    
+
+    this.clearBoard = this.clearBoard.bind(this); 
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.visualizeDijkstra = this.visualizeDijkstra.bind(this);
   }
+
+  clearBoard() {
+    const grid = getInitialGrid(); // Resetting the grid to its initial state
+    this.setState({ grid });
+  }
+
+  reloadPage = () => {
+    window.location.reload();
+  };
 
   componentDidMount() {
     const grid = getInitialGrid();
@@ -85,11 +98,20 @@ export default class PathfindingVisualizer extends Component {
     return (
       <>
         <div className="logo">
-          {/* <img src={logo} width="100" height="50" alt="Logo" /> */}
+          {/* <img src={mask} width="100" height="50" alt="Logo" /> */}
         </div>
-        <button onClick={this.visualizeDijkstra}>
-          Visualize Dijkstra's Algorithm
-        </button>
+        <div className="button-container">
+          
+          <button onClick={this.visualizeDijkstra}>
+            Visualize Dijkstra's Algorithm
+          </button>
+          <div>
+            {/* Your existing component JSX */}
+            <button onClick={this.reloadPage}>Reload Page</button>
+          </div>
+          <button onClick={this.clearBoard}>Clear Board</button>
+
+        </div>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
