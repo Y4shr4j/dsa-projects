@@ -1,36 +1,20 @@
-// src/HomePage.js
-
 import React from 'react';
+import Header from './Header';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
-// import SudokuSolver from './sudokuSolver/App';
 
 function HomePage() {
   return (
-    <div className="home-page">
-      <header className="home-header">
-        <h1>yashra4j</h1>
-        <h3>Welcome to the Visualizer</h3>
-        <p>Select a visualizer to start</p>
-        <div className="home-buttons">
-          <Link to="/pathfinding" className="home-button m-3">Pathfinding Visualizer</Link>
-        </div>
-        <div className="home-buttons">
-          <Link to="/sudoku" className="home-button m-3">Sudoku Solver</Link>
-        </div>
-        <div className="home-buttons">
-          <Link to="/visualizer" className="home-button m-3">N Queen Visualizer</Link>
-        </div>
-        <div className="home-buttons">
-          <Link to="/tree" className="home-button m-3">Tree Visualizer</Link>
-        </div>
-        <div className="home-buttons">
-          <Link to="/tic-tac-toe" className="home-button m-3">Tic Tac Toe</Link>
-        </div>
-        <div className="home-buttons">
-          <Link to="/sort" className="home-button m-3">Sorting Visualizer</Link>
-        </div>
-      </header>
+    <div className="home-page bg-gray-100 min-h-screen flex flex-col">
+      <Header />
+      <div className="home-buttons grid grid-cols-4 gap-4 p-8 flex-grow">
+        <Link to="/pathfinding" className="tile">Pathfinding Visualizer</Link>
+        <Link to="/sudoku" className="tile">Sudoku Solver</Link>
+        <Link to="/visualizer" className="tile">N Queen Visualizer</Link>
+        <Link to="/tree" className="tile">Tree Visualizer</Link>
+        <Link to="/tic-tac-toe" className="tile">Tic Tac Toe</Link>
+        <Link to="/sort" className="tile">Sorting Visualizer</Link>
+      </div>
     </div>
   );
 }

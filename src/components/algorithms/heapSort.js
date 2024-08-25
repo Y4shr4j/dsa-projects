@@ -1,57 +1,35 @@
-let values = [];
-export default function HeapSort(rects2){
-    let rects = rects2.slice();
-    values = [];
-    let sz = rects2.length;
-   // sz = sz-1;
-    heapSort(rects,sz);
-    return values;
-}
-function heapify(rects,n,i){
-    let largest = i; // Initialize largest as root
-    let l = 2 * i + 1; // left = 2*i + 1
-    let r = 2 * i + 2; // right = 2*i + 2
+import {SWAP} from '../helper/constants.js';
+import {swap} from '../helper/swap.js';
 
-    // If left child is larger than root
-    if (l < n && rects[l].width > rects[largest].width)
-        largest = l;
+// heap sort returns container with 2 indexes and boolean
+// describing to swap or not
+export const heapSort = async(array, length) => {
+    let moves = [];
+    for(let index = Math.ceil(length/2)-1 ; index >= 0 ; --index) {
+        await heapify(moves, array, length, index);
+    }
+    for(let index = length-1 ; index >= 0 ; --index) {
+        moves.push([index, 0, SWAP]);
+        await swap(array, index, 0);
+        await heapify(moves, array, index, 0);
+    }
+    return moves;
+};
 
-    // If right child is larger than largest so far
-    if (r < n && rects[r].width > rects[largest].width)
-        largest = r;
+const heapify = async(moves, array, length, index) => {
+    let largest = index;
+    let left = 2*index + 1, right = 2*index + 2;
+    
+    if(left < length && array[left] > array[largest]) {
+        largest = left;
+    }
+    if(right < length && array[right] > array[largest]) {
+        largest = right;
+    }
 
-    // If largest is not root
-    if (largest != i) {
-        let temp = rects[i];
-        rects[i] = rects[largest];
-        rects[largest] = temp;
-        let value = {
-            left:i,
-            right:largest,
-            sorted: false
-        }
-        values.push(value);
-        // Recursively heapify the affected sub-tree
-        heapify(rects, n, largest);
+    if(largest !== index) {
+        moves.push([index, largest, SWAP]);
+        await swap(array, index, largest);
+        await heapify(moves, array, length, largest);
     }
-}
-function heapSort(rects,n){
-    for(let i = Math.floor(n/2)-1;i>=0;i--){
-      //  console.log("heap ",n," ",i);
-        heapify(rects,n,i);
-    }
-    for (let i = n-1 ; i > 0; i--) {
-        // Move current root to end
-        let temp = rects[i];
-        rects[i] = rects[0];
-        rects[0] = temp;
-        let value = {
-            left:i,
-            right:0,
-            sorted:true
-        }
-        values.push(value);
-        // call max heapify on the reduced heap
-        heapify(rects, i, 0);
-    }
-}
+};

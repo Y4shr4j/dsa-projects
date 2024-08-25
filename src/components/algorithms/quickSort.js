@@ -1,59 +1,39 @@
-let values = [];
+// quickSort.js
 
-export function quickSort(rects2){
-    let rects = rects2.slice();
-    values = [];
-    let sz = rects2.length;
-    // console.log( "fdsfsd",sz );
-    sz = sz-1;
-    quick(rects,0,sz);
-    for(var i=0;i<=sz;i++){
-        values.push({
-            xx:i,
-            yy:i,
-            changed:true
-        })
+import { SWAP } from '../helper/constants.js';
+import { swap } from '../helper/swap.js';
+
+// quick sort returns container with 2 indexes and boolean
+// describing to swap or not
+const quickSort = async (array, length) => {
+    let moves = [];
+    await divider(moves, array, 0, length - 1);
+    return moves;
+};
+
+const divider = async (moves, array, start, end) => {
+    if (start < end) {
+        let pivot = await partition(moves, array, start, end);
+        await divider(moves, array, start, pivot - 1);
+        await divider(moves, array, pivot + 1, end);
     }
-    return values;
-}
+};
 
-
-function getPartition(rects, left, right){
-    let pivot = rects[right].width
-    let it = left-1;
-    for(var j=left;j<=right-1;j++){
-        if( rects[j].width< pivot){
-            it++;
-            if( it!==j ){
-                // swap(rects[it],rects[j];
-                const rect1 = {...rects[it]};
-                const rect2 = {...rects[j]};
-                rects[it] = rect2;
-                rects[j] = rect1;
-                values.push({
-                    xx:it,
-                    yy:j,
-                    changed:true
-                })
-            }
+const partition = async (moves, array, start, end) => {
+    let prevIndex = start - 1;
+    for (let index = start; index < end; ++index) {
+        if (index !== end) {
+            moves.push([index, end, !SWAP]);
+        }
+        if (array[index] < array[end]) {
+            ++prevIndex;
+            await swap(array, index, prevIndex);
+            moves.push([index, prevIndex, SWAP]);
         }
     }
-    if( it+1!==right ){
-        const rect1 = {...rects[it+1]};
-        const rect2 = {...rects[right]};
-        rects[it+1] = rect2;
-        rects[right] = rect1;
-        values.push({
-            xx:it+1,
-            yy:right,
-            changed:true
-        })
-    }
-    return it+1;
-}
-function quick(rects,left,right){
-    if( left>=right ) return ;
-    const partition = getPartition(rects,left,right);
-    quick(rects,left,partition-1);
-    quick(rects,partition+1,right);
-}
+    await swap(array, prevIndex + 1, end);
+    moves.push([end, prevIndex + 1, SWAP]);
+    return prevIndex + 1;
+};
+
+export default quickSort;

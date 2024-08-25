@@ -1,62 +1,44 @@
-let values = [];
-export default function mergeSort(rects2){
-    let rects = rects2.slice();
-    values = [];
-    let sz = rects2.length;
-   // console.log( "fdsfsd",sz );
-    sz = sz-1;
-    mergeS(rects,0,sz);
-    return values;
-}
+import { CHANGE_VALUE } from '../helper/constants.js';
 
-function merge(rects, l, m, r){
-  //  console.log(l," ",r);
-    let n1 = m-l+1;
-    let n2 = r-m;
+// merge sort returns container with index, value, boolean
+// and list of range
+const mergeSort = async (array, length) => {
+    let moves = [];
+    await divide(array, moves, 0, length - 1);
+    return moves;
+};
 
-    const L = rects.slice(l, m+1);
-    const R = rects.slice(m+1,r+1);
-    let i = 0;
-    let j = 0;
-    let k = l;
-    while(i<n1 && j<n2){
-        if( L[i].width <= R[j].width ){
-            rects[k] = L[i];
-            i++;
-        } else{
-            rects[k] = R[j];
-            j++;
-        }
-        k++;
+const divide = async (array, moves, start, end) => {
+    if (start < end) {
+        let mid = Math.floor((end + start) / 2);
+        await divide(array, moves, start, mid);
+        await divide(array, moves, mid + 1, end);
+        await merge(array, moves, start, mid, end);
     }
-    while (i < n1) {
-        rects[k] = L[i];
-        i++;
-        k++;
+};
+
+const merge = async (array, moves, start, mid, end) => {
+    let sortedArray = [];
+    let i = start, j = mid + 1;
+    while (i <= mid && j <= end) {
+        if (array[i] <= array[j]) sortedArray.push(array[i++]);
+        else sortedArray.push(array[j++]);
     }
-    while (j < n2) {
-        rects[k] = R[j];
-        j++;
-        k++;
+    while (i <= mid) {
+        sortedArray.push(array[i++]);
+    }
+    while (j <= end) {
+        sortedArray.push(array[j++]);
     }
 
-}
-
-function mergeS(rects,l,r){
-
-    if( l>=r ) return;
-    let m = l+ (r-l)/2;
-    m = Math.floor(m);
-   // console.log("iiiiiiiiiiiiiiiiiiiiiiiii ",m);
-    mergeS(rects,l,m);
-    mergeS(rects,m+1,r);
-    merge(rects,l,m,r);
-    let rectsCopy = rects.slice(l,r+1);
-    let value = {
-        left:l,
-        right:r,
-        mid:m,
-        val:rectsCopy
+    let indexes = [];
+    for (let i = start; i <= end; ++i) {
+        indexes.push(i);
     }
-    values.push(value);
-}
+    for (let i = start; i <= end; ++i) {
+        array[i] = sortedArray[i - start];
+        moves.push([i, array[i], CHANGE_VALUE, indexes]);
+    }
+};
+
+export default mergeSort;

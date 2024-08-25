@@ -1,39 +1,66 @@
-/* src/HomePage.css */
+/* General Styles for Tiles */
+.tile {
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
-.home-page {
-    text-align: center;
-    padding: 50px;
-  }
-  
-  .home-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
+.tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
+  background-color: #e0e0e0;
+}
+
+/* Header Styles */
+.home-header {
+  height: 150px; /* Reduced header height */
+  background-color: #0078d7; /* Windows Blue */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Buttons Grid Layout */
+.home-buttons {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px; /* Adjusted grid gap for more spacing */
+  padding: 40px 20px; /* Added padding for spacing around the grid */
+}
+
+/* Responsive Adjustments for Medium Screens */
+@media (max-width: 1024px) {
   .home-buttons {
-    margin-top: 20px;
-    margin: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns on medium screens */
   }
-  
-  .home-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    color: white;
-    background-color: #61dafb;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s;
+}
+
+/* Responsive Adjustments for Small Screens */
+@media (max-width: 768px) {
+  .home-buttons {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    padding: 20px; /* Reduced padding for smaller screens */
   }
-  
-  .home-button:hover {
-    background-color: #21a1f1;
+}
+
+/* Adjustments for Very Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .tile {
+    height: 150px; /* Reduced tile height for smaller screens */
+    font-size: 1.2rem; /* Reduced font size for better text fitting */
   }
-  
+}
