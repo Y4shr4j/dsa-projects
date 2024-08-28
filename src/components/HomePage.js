@@ -5,7 +5,7 @@ import './HomePage.css';
 
 function HomePage() {
   return (
-    <div className="home-page bg-gray-100 min-h-screen flex flex-col">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <Header />
       <div className="home-buttons grid grid-cols-4 gap-4 p-8 flex-grow">
         <Link to="/pathfinding" className="tile">Pathfinding Visualizer</Link>

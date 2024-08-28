@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
 
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+            <Header />
+
       <div className="bg-white p-8 rounded-lg shadow-lg text-center w-full max-w-md">
         <h1 className="text-4xl font-bold mb-8 text-gray-900">Contact Me</h1>
         <h1>YASH RAJ</h1>
