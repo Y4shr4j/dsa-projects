@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 // Define constants
-const regFill = "green";
+const regFill = "blue";
 // const highlightFill = "lightblue";
 const regFillText = "black";
 // const highlightFillText = "white";

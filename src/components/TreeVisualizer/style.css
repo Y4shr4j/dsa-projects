@@ -9,7 +9,7 @@ body {
   }
   
   header {
-    background-color: #4CAF50;
+    background-color: #4c4eaf;
     color: white;
     padding: 10px;
     text-align: center;
@@ -28,8 +28,8 @@ body {
   
   #options button {
     background-color: white;
-    border: 1px solid #4CAF50;
-    color: #4CAF50;
+    border: 1px solid #4c4eaf;
+    color: #4c4eaf;
     padding: 10px;
     cursor: pointer;
     margin: 5px;
@@ -37,7 +37,7 @@ body {
   }
   
   #options button:hover {
-    background-color: #4CAF50;
+    background-color: #4c4eaf;
     color: white;
   }
   

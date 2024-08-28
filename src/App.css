@@ -7,14 +7,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(255, 0, 0); /* Text color */
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background: #db0000; 
 }
 
 .App-link {
