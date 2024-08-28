@@ -4,14 +4,14 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import PathfindingVisualizer from './components/PathfindingVisualizer/PathfindingVisualizer';
-import NQueenVisualizer from './components/NQueensVisualizer/App.js';
+import NQueenVisualizer from './components/NQueensVisualizer/App';
 import HomePage from './components/HomePage';
-import TreeVisualizer from './components/TreeVisualizer/App.jsx';
+import TreeVisualizer from './components/TreeVisualizer/App';
 import SudokuSolver from './components/sudokuSolver/App';
-import TicTacToe from './components/tictactoe/tictactoe.jsx';
+import TicTacToe from './components/tictactoe/tictactoe';
 import SortingVisualizer from './components/sorting/App.js';
-import Contact from './components/contact.jsx';
-import About from './components/about.jsx';
+import Contact from './components/contact';
+import About from './components/about';
 
 
 function App() {
