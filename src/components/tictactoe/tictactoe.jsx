@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './tictactoe.css';
 
@@ -144,6 +145,15 @@ export default function TicTacToe() {
         <Board squares={squares} onClick={handleClick} />
       </div>
       <button className="reset-button" onClick={handleReset}>Clear Board</button>
+        <h1>
+
+          <Link 
+              to="/" 
+              className="inline-block mt-6 text-blue-500 text-lg font-bold hover:underline"
+            >
+              Back to Home
+            </Link>
+        </h1>
     </div>
   );
 }

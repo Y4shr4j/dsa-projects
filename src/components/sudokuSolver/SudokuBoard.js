@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import SudokuSolver from './SudokuSolver';
 
@@ -63,6 +64,15 @@ const SudokuBoard = () => {
       <div>
         <button onClick={handleClear}>Clear board</button>
       </div>
+        <h1>
+
+          <Link 
+              to="/" 
+              className="inline-block mt-6 text-blue-500 text-lg font-bold hover:underline"
+            >
+              Back to Home
+            </Link>
+        </h1>
     </div>
   );
 };

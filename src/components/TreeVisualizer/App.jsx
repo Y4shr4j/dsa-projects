@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './style.css';
 // import * as d3 from 'd3';
@@ -53,6 +54,15 @@ const App = () => {
       </div>
       <div id="binary-tree"></div>
       <div id="array-visual"></div>
+        <h1>
+
+          <Link 
+              to="/" 
+              className="inline-block mt-6 text-blue-500 text-lg font-bold hover:underline"
+            >
+              Back to Home
+            </Link>
+        </h1>
     </div>
   );
 };

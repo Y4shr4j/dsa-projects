@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 // import logo from './gfg-new-logo.png'; // Ensure the correct relative path
 import Node from './Node/Node';
 import { dijkstra, getNodesInShortestPathOrder } from '../algorithms/dijkstra';
@@ -135,6 +136,15 @@ export default class PathfindingVisualizer extends Component {
               </div>
             );
           })}
+
+<h1>
+<Link 
+    to="/" 
+    className="inline-block mt-6 text-blue-500 text-lg font-bold hover:underline"
+  >
+    Back to Home
+  </Link>
+</h1>
         </div>
       </>
     );

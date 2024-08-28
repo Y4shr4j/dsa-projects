@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './SortingVisualizer.css';
 import {getMergeSortAnimations, getBubbleSortAnimations, getSelectionSortAnimations, getQuickSortAnimations} from './sortingAlgorithms.js';
@@ -145,6 +146,15 @@ export default class SortingVisualizer extends React.Component {
                       ))}
                   </div>
               </div>
+              <h1>
+
+          <Link 
+              to="/" 
+              className="inline-block mt-6 text-blue-500 text-lg font-bold hover:underline"
+            >
+              Back to Home
+            </Link>
+          </h1>
           </div>
       );
     };
