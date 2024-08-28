@@ -4,7 +4,7 @@ import Chessboard from "./Chessboard.js";
 const App = () => {
   return (
     <div>
-      <Chessboard />
+      <Chessboard/>
     </div>
   );
 };
