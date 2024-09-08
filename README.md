@@ -4,7 +4,7 @@ Welcome to the DSA Visualization project! This web application provides an inter
 
 ## Project URL
 
-The project is live and can be accessed here: [DSA Visualization](https://dsa-projects.vercel.app/)
+# LINK : [https://dsa-projects.vercel.app](https://dsa-projects.vercel.app/)
 
 ## Features
 
